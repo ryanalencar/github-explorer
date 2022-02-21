@@ -1,6 +1,14 @@
 import * as S from "./styles";
 
-export function RepositoryItem({ repository }) {
+interface RepositoryItemProps {
+  repository: {
+    name: string;
+    description: string;
+    html_url: string;
+  };
+}
+
+export function RepositoryItem({ repository }: RepositoryItemProps) {
   return (
     <S.RepoList>
       <strong>{repository?.name ?? "Default"}</strong>
